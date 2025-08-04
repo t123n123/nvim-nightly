@@ -45,7 +45,7 @@ vim.pack.add({
 })
 
 
-vim.cmd [[colorscheme carbonfox]]
+vim.cmd [[colorscheme duskfox]]
 require("mason").setup()
 require("oil").setup({ columns = { "icon" } })
 require("mini.pick").setup()
@@ -109,8 +109,8 @@ require("snacks").setup({
     bigfile = { enabled = true },
     words = { enabled = true },
     notifier = { enabled = true },
-
 })
+
 
 vim.cmd [[set completeopt+=noselect]]
 
@@ -131,5 +131,9 @@ kb('n', "gI", function() Snacks.picker.lsp_implementations() end)
 kb('n', "gy", function() Snacks.picker.lsp_type_definitions() end)
 kb('n', "<leader>ss", function() Snacks.picker.lsp_symbols() end)
 kb('n', "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end)
+kb('n', "<M-b>", ":cprev<cr>")
 kb('n', "<M-n>", ":cnext<cr>")
 kb('n', "<M-m>", ":cprev<cr>")
+kb({'n', 'v', 'i', 's'}, "<C-m>", "<C-y>")
+kb({'n', 'v', 'i', 's'}, "<C-b>", "<C-p>")
+
